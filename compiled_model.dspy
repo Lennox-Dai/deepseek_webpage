@@ -1,0 +1,766 @@
+{
+  "agent_a.reasoning_agent.process": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "ConstructName": "Identify alternate angles",
+        "SubjectName": "Angle Facts with Parallel Lines",
+        "CorrectAnswer": "Only\r\nTom",
+        "QuestionText": "Tom and Katie are arguing about alternate angles.\r\nTom says angles \\( p \\) and \\( q \\) are alternate.\r\n\r\nKatie says angles \\( p \\) and \\( q \\) are equal.\r\nWho is correct? ![Shows two non parallel lines that are intersected by another line. Angles P and Q are both on the outside of the lines and on opposite sides of the transversal.]()",
+        "AnswerText": "Neither is correct",
+        "MisconceptionText": "Thinks only angles on parallel lines can be alternate",
+        "MisconceptionId": 1588.0
+      },
+      {
+        "ConstructName": "Simplify algebraic expressions to maintain equivalence by collecting like terms involving just one linear variable",
+        "SubjectName": "Simplifying Expressions by Collecting Like Terms",
+        "CorrectAnswer": "\\( 4 d \\)",
+        "QuestionText": "Simplify the following by collecting like terms.\r\n\\[\r\nd+d+d+d\r\n\\]",
+        "AnswerText": "\\( d^{4} \\)",
+        "MisconceptionText": "Confuses collecting like terms with multiplication",
+        "MisconceptionId": 1644.0
+      },
+      {
+        "ConstructName": "Divide decimals by 10",
+        "SubjectName": "Multiplying and Dividing with Decimals",
+        "CorrectAnswer": "\\( 4.32 \\)",
+        "QuestionText": "\\( 43.2 \\div 10= \\)",
+        "AnswerText": "\\( 33.2 \\)",
+        "MisconceptionText": "Subtracts instead of divides",
+        "MisconceptionId": 2273.0
+      }
+    ],
+    "signature": {
+      "instructions": "Solve the problems based on the question and the right answer.",
+      "fields": [
+        {
+          "prefix": "Context:",
+          "description": "History of other agents for reference. Empty if no history is available."
+        },
+        {
+          "prefix": "Question Text:",
+          "description": "The question text."
+        },
+        {
+          "prefix": "Construct Name:",
+          "description": "${ConstructName}"
+        },
+        {
+          "prefix": "Subject Name:",
+          "description": "The subject of the question."
+        },
+        {
+          "prefix": "Correct Answer:",
+          "description": "The correct answer."
+        },
+        {
+          "prefix": "Reasoning Text:",
+          "description": "Based on the provided correct answer, its reasoning process, and the incorrect answer obtained, identify the step where the error occurred, and determine the reason for the mistake."
+        }
+      ]
+    }
+  },
+  "agent_a.process_reasoning": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "ConstructName": "Identify alternate angles",
+        "SubjectName": "Angle Facts with Parallel Lines",
+        "CorrectAnswer": "Only\r\nTom",
+        "QuestionText": "Tom and Katie are arguing about alternate angles.\r\nTom says angles \\( p \\) and \\( q \\) are alternate.\r\n\r\nKatie says angles \\( p \\) and \\( q \\) are equal.\r\nWho is correct? ![Shows two non parallel lines that are intersected by another line. Angles P and Q are both on the outside of the lines and on opposite sides of the transversal.]()",
+        "AnswerText": "Neither is correct",
+        "MisconceptionText": "Thinks only angles on parallel lines can be alternate",
+        "MisconceptionId": 1588.0
+      },
+      {
+        "ConstructName": "Simplify algebraic expressions to maintain equivalence by collecting like terms involving just one linear variable",
+        "SubjectName": "Simplifying Expressions by Collecting Like Terms",
+        "CorrectAnswer": "\\( 4 d \\)",
+        "QuestionText": "Simplify the following by collecting like terms.\r\n\\[\r\nd+d+d+d\r\n\\]",
+        "AnswerText": "\\( d^{4} \\)",
+        "MisconceptionText": "Confuses collecting like terms with multiplication",
+        "MisconceptionId": 1644.0
+      },
+      {
+        "ConstructName": "Divide decimals by 10",
+        "SubjectName": "Multiplying and Dividing with Decimals",
+        "CorrectAnswer": "\\( 4.32 \\)",
+        "QuestionText": "\\( 43.2 \\div 10= \\)",
+        "AnswerText": "\\( 33.2 \\)",
+        "MisconceptionText": "Subtracts instead of divides",
+        "MisconceptionId": 2273.0
+      }
+    ],
+    "signature": {
+      "instructions": "Explain the misconception the student has based on his answer.",
+      "fields": [
+        {
+          "prefix": "Context:",
+          "description": "History of other agents for reference. Empty if no history is available."
+        },
+        {
+          "prefix": "Question Text:",
+          "description": "The question text."
+        },
+        {
+          "prefix": "Answer Text:",
+          "description": "The student wrong answer text."
+        },
+        {
+          "prefix": "Construct Name:",
+          "description": "${ConstructName}"
+        },
+        {
+          "prefix": "Subject Name:",
+          "description": "The subject of the question."
+        },
+        {
+          "prefix": "Correct Answer:",
+          "description": "The correct answer."
+        },
+        {
+          "prefix": "Reasoning Process:",
+          "description": "The reasoning solution of the question."
+        },
+        {
+          "prefix": "Misconception Text:",
+          "description": "Explaination of the misconception the student has based on his answer find out which stage he makes mistake and conclude in one percise sentences."
+        }
+      ]
+    }
+  },
+  "agent_a.process": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "context": null,
+        "QuestionText": "The angles highlighted on this rectangle with different length sides can never be... ![A rectangle with the diagonals drawn in. The angle on the right hand side at the centre is highlighted in red and the angle at the bottom at the centre is highlighted in yellow.]()",
+        "AnswerText": "acute",
+        "ConstructName": "Recall and use the intersecting diagonals properties of a rectangle",
+        "SubjectName": "Properties of Quadrilaterals",
+        "CorrectAnswer": "\\( 90^{\\circ} \\)",
+        "MisconceptionText": "Believes that the angles formed by intersecting diagonals of a rectangle are the right angles."
+      },
+      {
+        "augmented": true,
+        "context": "Agent B concludes: (Thinks the angles formed by intersecting diagonals of a rectangle can never be right angles, which is incorrect as they are always right angles.) \/nAgent C concludes:  (Believes that the angles formed by intersecting diagonals of a rectangle are always right angles, regardless of the rectangle's properties.)",
+        "QuestionText": "The angles highlighted on this rectangle with different length sides can never be... ![A rectangle with the diagonals drawn in. The angle on the right hand side at the centre is highlighted in red and the angle at the bottom at the centre is highlighted in yellow.]()",
+        "AnswerText": "acute",
+        "ConstructName": "Recall and use the intersecting diagonals properties of a rectangle",
+        "SubjectName": "Properties of Quadrilaterals",
+        "CorrectAnswer": "\\( 90^{\\circ} \\)",
+        "MisconceptionText": "Believes that the angles formed by intersecting diagonals of a rectangle are not right angles, even though they are always right angles."
+      },
+      {
+        "augmented": true,
+        "context": "Agent B concludes: (Incorrectly identifies the angles formed by intersecting diagonals of a rectangle as acute, instead of right angles.) \/nAgent C concludes:  (Believes that angles created by intersecting diagonals in a rectangle are not right angles.)",
+        "QuestionText": "The angles highlighted on this rectangle with different length sides can never be... ![A rectangle with the diagonals drawn in. The angle on the right hand side at the centre is highlighted in red and the angle at the bottom at the centre is highlighted in yellow.]()",
+        "AnswerText": "acute",
+        "ConstructName": "Recall and use the intersecting diagonals properties of a rectangle",
+        "SubjectName": "Properties of Quadrilaterals",
+        "CorrectAnswer": "\\( 90^{\\circ} \\)",
+        "MisconceptionText": "Incorrectly identifies right angles as not possible, when in fact the angles formed by intersecting diagonals in a rectangle are always right angles."
+      },
+      {
+        "augmented": true,
+        "context": null,
+        "QuestionText": "Solve\r\n\\[\r\n2 n+3 \\leq 3 n-7\r\n\\]",
+        "AnswerText": "\\( -4 \\leq n \\)",
+        "ConstructName": "Solve linear inequalities in one variable where the unknown appears on boths sides of the equation",
+        "SubjectName": "Solving Linear Inequalities",
+        "CorrectAnswer": "\\( 10 \\leq n \\)",
+        "MisconceptionText": "Incorrectly subtracts or adds a term from both sides, or incorrectly signs the inequality when solving the inequality."
+      }
+    ],
+    "signature": {
+      "instructions": "Explain the misconception the student has based on his answer.",
+      "fields": [
+        {
+          "prefix": "Context:",
+          "description": "Debate history of other agents for reference. Empty if no history is available."
+        },
+        {
+          "prefix": "Question Text:",
+          "description": "The question text."
+        },
+        {
+          "prefix": "Answer Text:",
+          "description": "The student wrong answer text."
+        },
+        {
+          "prefix": "Construct Name:",
+          "description": "${ConstructName}"
+        },
+        {
+          "prefix": "Subject Name:",
+          "description": "The subject of the question."
+        },
+        {
+          "prefix": "Correct Answer:",
+          "description": "The correct answer."
+        },
+        {
+          "prefix": "Misconception Text:",
+          "description": "Explaination of the misconception the student has based on his answer in one percise sentences."
+        }
+      ]
+    }
+  },
+  "agent_b.reasoning_agent.process": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "Solve the problems based on the question and the right answer.",
+      "fields": [
+        {
+          "prefix": "Context:",
+          "description": "History of other agents for reference. Empty if no history is available."
+        },
+        {
+          "prefix": "Question Text:",
+          "description": "The question text."
+        },
+        {
+          "prefix": "Construct Name:",
+          "description": "${ConstructName}"
+        },
+        {
+          "prefix": "Subject Name:",
+          "description": "The subject of the question."
+        },
+        {
+          "prefix": "Correct Answer:",
+          "description": "The correct answer."
+        },
+        {
+          "prefix": "Reasoning Text:",
+          "description": "Based on the provided correct answer, its reasoning process, and the incorrect answer obtained, identify the step where the error occurred, and determine the reason for the mistake."
+        }
+      ]
+    }
+  },
+  "agent_b.process_reasoning": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "Explain the misconception the student has based on his answer.",
+      "fields": [
+        {
+          "prefix": "Context:",
+          "description": "History of other agents for reference. Empty if no history is available."
+        },
+        {
+          "prefix": "Question Text:",
+          "description": "The question text."
+        },
+        {
+          "prefix": "Answer Text:",
+          "description": "The student wrong answer text."
+        },
+        {
+          "prefix": "Construct Name:",
+          "description": "${ConstructName}"
+        },
+        {
+          "prefix": "Subject Name:",
+          "description": "The subject of the question."
+        },
+        {
+          "prefix": "Correct Answer:",
+          "description": "The correct answer."
+        },
+        {
+          "prefix": "Reasoning Process:",
+          "description": "The reasoning solution of the question."
+        },
+        {
+          "prefix": "Misconception Text:",
+          "description": "Explaination of the misconception the student has based on his answer find out which stage he makes mistake and conclude in one percise sentences."
+        }
+      ]
+    }
+  },
+  "agent_b.process": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "context": "Agent A concludes: (Believes that the angles formed by intersecting diagonals of a rectangle are the right angles.)",
+        "QuestionText": "The angles highlighted on this rectangle with different length sides can never be... ![A rectangle with the diagonals drawn in. The angle on the right hand side at the centre is highlighted in red and the angle at the bottom at the centre is highlighted in yellow.]()",
+        "AnswerText": "acute",
+        "ConstructName": "Recall and use the intersecting diagonals properties of a rectangle",
+        "SubjectName": "Properties of Quadrilaterals",
+        "CorrectAnswer": "\\( 90^{\\circ} \\)",
+        "MisconceptionText": "Thinks the angles formed by intersecting diagonals of a rectangle can never be right angles, which is incorrect as they are always right angles."
+      },
+      {
+        "augmented": true,
+        "context": "Agent A concludes: (Believes that the angles formed by intersecting diagonals of a rectangle are not right angles, even though they are always right angles.)",
+        "QuestionText": "The angles highlighted on this rectangle with different length sides can never be... ![A rectangle with the diagonals drawn in. The angle on the right hand side at the centre is highlighted in red and the angle at the bottom at the centre is highlighted in yellow.]()",
+        "AnswerText": "acute",
+        "ConstructName": "Recall and use the intersecting diagonals properties of a rectangle",
+        "SubjectName": "Properties of Quadrilaterals",
+        "CorrectAnswer": "\\( 90^{\\circ} \\)",
+        "MisconceptionText": "Incorrectly identifies the angles formed by intersecting diagonals of a rectangle as acute, instead of right angles."
+      },
+      {
+        "augmented": true,
+        "context": "Agent A concludes: (Incorrectly subtracts or adds a term from both sides, or incorrectly signs the inequality when solving the inequality.)",
+        "QuestionText": "Solve\r\n\\[\r\n2 n+3 \\leq 3 n-7\r\n\\]",
+        "AnswerText": "\\( -4 \\leq n \\)",
+        "ConstructName": "Solve linear inequalities in one variable where the unknown appears on boths sides of the equation",
+        "SubjectName": "Solving Linear Inequalities",
+        "CorrectAnswer": "\\( 10 \\leq n \\)",
+        "MisconceptionText": "Incorrectly solves for n by incorrectly rearranging or signing terms during the inequality solution process"
+      },
+      {
+        "augmented": true,
+        "context": "Agent A concludes: (Incorrectly rearranges or signs terms during the inequality solution process, specifically when isolating the variable.)",
+        "QuestionText": "Solve\r\n\\[\r\n2 n+3 \\leq 3 n-7\r\n\\]",
+        "AnswerText": "\\( -4 \\leq n \\)",
+        "ConstructName": "Solve linear inequalities in one variable where the unknown appears on boths sides of the equation",
+        "SubjectName": "Solving Linear Inequalities",
+        "CorrectAnswer": "\\( 10 \\leq n \\)",
+        "MisconceptionText": "Incorrectly rearranges and signs terms during inequality solution process when isolating the variable, leading to incorrect solution."
+      }
+    ],
+    "signature": {
+      "instructions": "Explain the misconception the student has based on his answer.",
+      "fields": [
+        {
+          "prefix": "Context:",
+          "description": "Debate history of other agents for reference. Empty if no history is available."
+        },
+        {
+          "prefix": "Question Text:",
+          "description": "The question text."
+        },
+        {
+          "prefix": "Answer Text:",
+          "description": "The student wrong answer text."
+        },
+        {
+          "prefix": "Construct Name:",
+          "description": "${ConstructName}"
+        },
+        {
+          "prefix": "Subject Name:",
+          "description": "The subject of the question."
+        },
+        {
+          "prefix": "Correct Answer:",
+          "description": "The correct answer."
+        },
+        {
+          "prefix": "Misconception Text:",
+          "description": "Explaination of the misconception the student has based on his answer in one percise sentences."
+        }
+      ]
+    }
+  },
+  "agent_c.reasoning_agent.process": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "Solve the problems based on the question and the right answer.",
+      "fields": [
+        {
+          "prefix": "Context:",
+          "description": "History of other agents for reference. Empty if no history is available."
+        },
+        {
+          "prefix": "Question Text:",
+          "description": "The question text."
+        },
+        {
+          "prefix": "Construct Name:",
+          "description": "${ConstructName}"
+        },
+        {
+          "prefix": "Subject Name:",
+          "description": "The subject of the question."
+        },
+        {
+          "prefix": "Correct Answer:",
+          "description": "The correct answer."
+        },
+        {
+          "prefix": "Reasoning Text:",
+          "description": "Based on the provided correct answer, its reasoning process, and the incorrect answer obtained, identify the step where the error occurred, and determine the reason for the mistake."
+        }
+      ]
+    }
+  },
+  "agent_c.process_reasoning": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "Explain the misconception the student has based on his answer.",
+      "fields": [
+        {
+          "prefix": "Context:",
+          "description": "History of other agents for reference. Empty if no history is available."
+        },
+        {
+          "prefix": "Question Text:",
+          "description": "The question text."
+        },
+        {
+          "prefix": "Answer Text:",
+          "description": "The student wrong answer text."
+        },
+        {
+          "prefix": "Construct Name:",
+          "description": "${ConstructName}"
+        },
+        {
+          "prefix": "Subject Name:",
+          "description": "The subject of the question."
+        },
+        {
+          "prefix": "Correct Answer:",
+          "description": "The correct answer."
+        },
+        {
+          "prefix": "Reasoning Process:",
+          "description": "The reasoning solution of the question."
+        },
+        {
+          "prefix": "Misconception Text:",
+          "description": "Explaination of the misconception the student has based on his answer find out which stage he makes mistake and conclude in one percise sentences."
+        }
+      ]
+    }
+  },
+  "agent_c.process": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "context": "Agent A concludes: (Believes that the angles formed by intersecting diagonals of a rectangle are the right angles.)",
+        "QuestionText": "The angles highlighted on this rectangle with different length sides can never be... ![A rectangle with the diagonals drawn in. The angle on the right hand side at the centre is highlighted in red and the angle at the bottom at the centre is highlighted in yellow.]()",
+        "AnswerText": "acute",
+        "ConstructName": "Recall and use the intersecting diagonals properties of a rectangle",
+        "SubjectName": "Properties of Quadrilaterals",
+        "CorrectAnswer": "\\( 90^{\\circ} \\)",
+        "MisconceptionText": "Believes that the angles formed by intersecting diagonals of a rectangle are always right angles, regardless of the rectangle's properties."
+      },
+      {
+        "augmented": true,
+        "context": "Agent A concludes: (Believes that the angles formed by intersecting diagonals of a rectangle are not right angles, even though they are always right angles.)",
+        "QuestionText": "The angles highlighted on this rectangle with different length sides can never be... ![A rectangle with the diagonals drawn in. The angle on the right hand side at the centre is highlighted in red and the angle at the bottom at the centre is highlighted in yellow.]()",
+        "AnswerText": "acute",
+        "ConstructName": "Recall and use the intersecting diagonals properties of a rectangle",
+        "SubjectName": "Properties of Quadrilaterals",
+        "CorrectAnswer": "\\( 90^{\\circ} \\)",
+        "MisconceptionText": "Believes that angles created by intersecting diagonals in a rectangle are not right angles."
+      },
+      {
+        "augmented": true,
+        "context": "Agent A concludes: (Incorrectly subtracts or adds a term from both sides, or incorrectly signs the inequality when solving the inequality.)",
+        "QuestionText": "Solve\r\n\\[\r\n2 n+3 \\leq 3 n-7\r\n\\]",
+        "AnswerText": "\\( -4 \\leq n \\)",
+        "ConstructName": "Solve linear inequalities in one variable where the unknown appears on boths sides of the equation",
+        "SubjectName": "Solving Linear Inequalities",
+        "CorrectAnswer": "\\( 10 \\leq n \\)",
+        "MisconceptionText": "Incorrectly solves the inequality, signs or simplifies incorrectly."
+      },
+      {
+        "augmented": true,
+        "context": "Agent A concludes: (Incorrectly rearranges or signs terms during the inequality solution process, specifically when isolating the variable.)",
+        "QuestionText": "Solve\r\n\\[\r\n2 n+3 \\leq 3 n-7\r\n\\]",
+        "AnswerText": "\\( -4 \\leq n \\)",
+        "ConstructName": "Solve linear inequalities in one variable where the unknown appears on boths sides of the equation",
+        "SubjectName": "Solving Linear Inequalities",
+        "CorrectAnswer": "\\( 10 \\leq n \\)",
+        "MisconceptionText": "Incorrectly rearranges or signs terms during the inequality solution process, specifically when isolating the variable, reversing or incorrectly applying the inequality signs during the solution."
+      }
+    ],
+    "signature": {
+      "instructions": "Explain the misconception the student has based on his answer.",
+      "fields": [
+        {
+          "prefix": "Context:",
+          "description": "Debate history of other agents for reference. Empty if no history is available."
+        },
+        {
+          "prefix": "Question Text:",
+          "description": "The question text."
+        },
+        {
+          "prefix": "Answer Text:",
+          "description": "The student wrong answer text."
+        },
+        {
+          "prefix": "Construct Name:",
+          "description": "${ConstructName}"
+        },
+        {
+          "prefix": "Subject Name:",
+          "description": "The subject of the question."
+        },
+        {
+          "prefix": "Correct Answer:",
+          "description": "The correct answer."
+        },
+        {
+          "prefix": "Misconception Text:",
+          "description": "Explaination of the misconception the student has based on his answer in one percise sentences."
+        }
+      ]
+    }
+  },
+  "agent_d.reasoning_agent.process": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "Solve the problems based on the question and the right answer.",
+      "fields": [
+        {
+          "prefix": "Context:",
+          "description": "History of other agents for reference. Empty if no history is available."
+        },
+        {
+          "prefix": "Question Text:",
+          "description": "The question text."
+        },
+        {
+          "prefix": "Construct Name:",
+          "description": "${ConstructName}"
+        },
+        {
+          "prefix": "Subject Name:",
+          "description": "The subject of the question."
+        },
+        {
+          "prefix": "Correct Answer:",
+          "description": "The correct answer."
+        },
+        {
+          "prefix": "Reasoning Text:",
+          "description": "Based on the provided correct answer, its reasoning process, and the incorrect answer obtained, identify the step where the error occurred, and determine the reason for the mistake."
+        }
+      ]
+    }
+  },
+  "agent_d.process_reasoning": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "Explain the misconception the student has based on his answer.",
+      "fields": [
+        {
+          "prefix": "Context:",
+          "description": "History of other agents for reference. Empty if no history is available."
+        },
+        {
+          "prefix": "Question Text:",
+          "description": "The question text."
+        },
+        {
+          "prefix": "Answer Text:",
+          "description": "The student wrong answer text."
+        },
+        {
+          "prefix": "Construct Name:",
+          "description": "${ConstructName}"
+        },
+        {
+          "prefix": "Subject Name:",
+          "description": "The subject of the question."
+        },
+        {
+          "prefix": "Correct Answer:",
+          "description": "The correct answer."
+        },
+        {
+          "prefix": "Reasoning Process:",
+          "description": "The reasoning solution of the question."
+        },
+        {
+          "prefix": "Misconception Text:",
+          "description": "Explaination of the misconception the student has based on his answer find out which stage he makes mistake and conclude in one percise sentences."
+        }
+      ]
+    }
+  },
+  "agent_d.process": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "Explain the misconception the student has based on his answer.",
+      "fields": [
+        {
+          "prefix": "Context:",
+          "description": "Debate history of other agents for reference. Empty if no history is available."
+        },
+        {
+          "prefix": "Question Text:",
+          "description": "The question text."
+        },
+        {
+          "prefix": "Answer Text:",
+          "description": "The student wrong answer text."
+        },
+        {
+          "prefix": "Construct Name:",
+          "description": "${ConstructName}"
+        },
+        {
+          "prefix": "Subject Name:",
+          "description": "The subject of the question."
+        },
+        {
+          "prefix": "Correct Answer:",
+          "description": "The correct answer."
+        },
+        {
+          "prefix": "Misconception Text:",
+          "description": "Explaination of the misconception the student has based on his answer in one percise sentences."
+        }
+      ]
+    }
+  },
+  "agent_e.reasoning_agent.process": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "Solve the problems based on the question and the right answer.",
+      "fields": [
+        {
+          "prefix": "Context:",
+          "description": "History of other agents for reference. Empty if no history is available."
+        },
+        {
+          "prefix": "Question Text:",
+          "description": "The question text."
+        },
+        {
+          "prefix": "Construct Name:",
+          "description": "${ConstructName}"
+        },
+        {
+          "prefix": "Subject Name:",
+          "description": "The subject of the question."
+        },
+        {
+          "prefix": "Correct Answer:",
+          "description": "The correct answer."
+        },
+        {
+          "prefix": "Reasoning Text:",
+          "description": "Based on the provided correct answer, its reasoning process, and the incorrect answer obtained, identify the step where the error occurred, and determine the reason for the mistake."
+        }
+      ]
+    }
+  },
+  "agent_e.process_reasoning": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "Explain the misconception the student has based on his answer.",
+      "fields": [
+        {
+          "prefix": "Context:",
+          "description": "History of other agents for reference. Empty if no history is available."
+        },
+        {
+          "prefix": "Question Text:",
+          "description": "The question text."
+        },
+        {
+          "prefix": "Answer Text:",
+          "description": "The student wrong answer text."
+        },
+        {
+          "prefix": "Construct Name:",
+          "description": "${ConstructName}"
+        },
+        {
+          "prefix": "Subject Name:",
+          "description": "The subject of the question."
+        },
+        {
+          "prefix": "Correct Answer:",
+          "description": "The correct answer."
+        },
+        {
+          "prefix": "Reasoning Process:",
+          "description": "The reasoning solution of the question."
+        },
+        {
+          "prefix": "Misconception Text:",
+          "description": "Explaination of the misconception the student has based on his answer find out which stage he makes mistake and conclude in one percise sentences."
+        }
+      ]
+    }
+  },
+  "agent_e.process": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "Explain the misconception the student has based on his answer.",
+      "fields": [
+        {
+          "prefix": "Context:",
+          "description": "Debate history of other agents for reference. Empty if no history is available."
+        },
+        {
+          "prefix": "Question Text:",
+          "description": "The question text."
+        },
+        {
+          "prefix": "Answer Text:",
+          "description": "The student wrong answer text."
+        },
+        {
+          "prefix": "Construct Name:",
+          "description": "${ConstructName}"
+        },
+        {
+          "prefix": "Subject Name:",
+          "description": "The subject of the question."
+        },
+        {
+          "prefix": "Correct Answer:",
+          "description": "The correct answer."
+        },
+        {
+          "prefix": "Misconception Text:",
+          "description": "Explaination of the misconception the student has based on his answer in one percise sentences."
+        }
+      ]
+    }
+  }
+}
