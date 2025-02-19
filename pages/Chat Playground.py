@@ -170,13 +170,13 @@ class QuizApp:
                 if '<think>' in text_chunk:
                     start_thinking = True
                     in_thinking = True
-                    yield "💭 思考过程：\n\n"
+                    yield "**💭 思考过程：\n\n**"
                     continue
                 
                 if '</think>' in text_chunk:
                     in_thinking = False
                     yield "".join(thinking_content)
-                    yield "\n\n📝 详细解答：\n\n"
+                    yield "**\n\n📝 详细解答：\n\n**"
                     continue
                 
                 if in_thinking:
